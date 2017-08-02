@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    /** Called when the user taps the Send button */
+    /** Called when the user taps the Biologie button */
     public void buttonBiologie (View view) {
         Intent intent = new Intent(this, RandomQuestion.class);
         String category = "biologie";
@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /** Called when the user taps the Send button */
+
+    /** Called when the user taps the Chimie button */
     public void buttonChimie (View view) {
         Intent intent = new Intent(this, RandomQuestion.class);
         String category = "chimie";

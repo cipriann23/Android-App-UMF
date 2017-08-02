@@ -22,9 +22,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-/**
- * Created by ProgrammingKnowledge on 1/5/2016.
- */
 public class BackgroundWorker extends AsyncTask<String, Void, String> {
     Context context;
     AlertDialog alertDialog;
@@ -82,3 +79,4 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
         super.onProgressUpdate(values);
     }
 }
+

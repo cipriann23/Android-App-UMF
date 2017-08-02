@@ -26,7 +26,7 @@ public class RandomQuestion extends AppCompatActivity {
         textView.setText(category);
 
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute();
+        backgroundWorker.execute("afdsa","afsdfas");
 
         ///////--------------------------------
 

@@ -23,6 +23,8 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class BackgroundWorker extends AsyncTask<String, Void, String> {
+
+
     Context context;
     AlertDialog alertDialog;
 
@@ -52,6 +54,8 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
             bufferedReader.close();
             inputStream.close();
             httpURLConnection.disconnect();
+
+
             return result;
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -73,10 +77,11 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
         alertDialog.setMessage(result);
         alertDialog.show();
     }
-
+    /*
     @Override
     protected void onProgressUpdate(Void... values) {
         super.onProgressUpdate(values);
     }
+    */
 }
 

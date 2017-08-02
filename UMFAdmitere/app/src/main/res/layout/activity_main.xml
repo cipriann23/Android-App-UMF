@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nemto.umfadmitere.MainActivity">
+
+
+    <Button
+        android:id="@+id/buttonBiologie"
+        android:layout_width="236dp"
+        android:layout_height="73dp"
+        android:onClick="buttonBiologie"
+        android:text="BIOLOGIE"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="100dp"
+        android:layout_above="@+id/buttonChimie"
+        android:layout_alignLeft="@+id/buttonChimie"
+        android:layout_alignStart="@+id/buttonChimie"
+        android:layout_marginBottom="42dp" />
+
+    <Button
+        android:id="@+id/buttonChimie"
+        android:layout_width="236dp"
+        android:layout_height="73dp"
+        android:onClick="buttonChimie"
+        android:text="CHIMIE"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="191dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="164dp" />
+
+</RelativeLayout>

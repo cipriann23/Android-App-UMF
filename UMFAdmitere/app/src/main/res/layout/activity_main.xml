@@ -34,4 +34,28 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="164dp" />
 
+    <CheckBox
+        android:id="@+id/currentYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonChimie"
+        android:layout_alignLeft="@+id/buttonChimie"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/buttonChimie"
+        android:layout_alignStart="@+id/buttonChimie"
+        android:layout_marginBottom="91dp"
+        android:text="Anul Curent" />
+
+    <CheckBox
+        android:id="@+id/lastYears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/currentYear"
+        android:layout_alignLeft="@+id/currentYear"
+        android:layout_alignRight="@+id/currentYear"
+        android:layout_alignStart="@+id/currentYear"
+        android:layout_alignTop="@+id/currentYear"
+        android:layout_marginTop="44dp"
+        android:text="Ani Anteriori" />
+
 </RelativeLayout>

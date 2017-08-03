@@ -34,16 +34,31 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String type = params[0];
+        //String type = params[0];
         String random_url = "http://192.168.1.7:1122/random_question_generator.php";
 
         try {
+
+            String year = params[0];
+            String category = params[1];
+
             URL url = new URL(random_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
 
+            // set params
+            OutputStream outputStream = httpURLConnection.getOutputStream();
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+            String post_data = URLEncoder.encode("year","UTF-8")+"="+URLEncoder.encode(year,"UTF-8")+"&"
+                    +URLEncoder.encode("category","UTF-8")+"="+URLEncoder.encode(category,"UTF-8");
+            bufferedWriter.write(post_data);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            outputStream.close();
+
+            // get result
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
             String result = "";

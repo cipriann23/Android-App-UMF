@@ -16,10 +16,10 @@
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         tools:layout_editor_absoluteX="74dp"
         tools:layout_editor_absoluteY="100dp"
-        android:layout_above="@+id/buttonChimie"
+        android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/buttonChimie"
         android:layout_alignStart="@+id/buttonChimie"
-        android:layout_marginBottom="42dp" />
+        android:layout_marginTop="81dp" />
 
     <Button
         android:id="@+id/buttonChimie"
@@ -30,9 +30,8 @@
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         tools:layout_editor_absoluteX="75dp"
         tools:layout_editor_absoluteY="191dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="164dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <CheckBox
         android:id="@+id/currentYear"

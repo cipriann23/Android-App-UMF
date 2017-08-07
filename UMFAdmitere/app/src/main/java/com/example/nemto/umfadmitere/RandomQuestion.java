@@ -5,6 +5,7 @@ package com.example.nemto.umfadmitere;
  */
 
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import android.widget.TextView;
 
 import java.util.concurrent.ExecutionException;
 
-public class RandomQuestion extends AppCompatActivity {
+public class RandomQuestion extends Activity {
 
 
     Integer answer;
@@ -25,6 +26,9 @@ public class RandomQuestion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.activity_random_question);
 
         // Get the Intent that started this activity and extract the string

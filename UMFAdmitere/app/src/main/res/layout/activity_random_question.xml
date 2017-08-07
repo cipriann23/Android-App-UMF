@@ -9,13 +9,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/RGroup"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/RGroup"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="14dp"
         android:text="TextView"
         tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_below="@+id/buttonAcasa"
+        android:layout_alignLeft="@+id/RGroup"
+        android:layout_alignStart="@+id/RGroup" />
 
     <RadioGroup
         android:id="@+id/RGroup"
@@ -79,7 +79,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRaspunde"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -88,5 +88,31 @@
         android:layout_marginBottom="17dp"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
+        android:onClick="buttonRaspunde"
         android:text="Raspunde" />
+
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonRaspunde"
+        android:layout_alignEnd="@+id/RGroup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/RGroup"
+        android:layout_alignTop="@+id/buttonRaspunde"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp" />
+
+    <Button
+        android:id="@+id/buttonUrmatoarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonRaspunde"
+        android:layout_alignRight="@+id/buttonRaspunde"
+        android:layout_alignTop="@+id/buttonRaspunde"
+        android:onClick="buttonUrmatoarea"
+        android:text="URMĂTOAREA"
+        android:visibility="invisible" />
+
 </RelativeLayout>

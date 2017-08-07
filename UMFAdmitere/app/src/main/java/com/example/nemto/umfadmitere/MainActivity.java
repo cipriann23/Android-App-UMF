@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     /** Called when the user taps the Biologie button */
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("category",category);
         intent.putExtra("year",year);
         startActivity(intent);
+
     }
 
 
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("category",category);
         intent.putExtra("year",year);
         startActivity(intent);
+
     }
 }
 

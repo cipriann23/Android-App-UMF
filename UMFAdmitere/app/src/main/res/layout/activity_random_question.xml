@@ -9,13 +9,15 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="48dp"
         android:text="TextView"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="16dp"
-        android:layout_below="@+id/buttonAcasa"
-        android:layout_alignLeft="@+id/RGroup"
-        android:layout_alignStart="@+id/RGroup" />
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/feedback"
+        android:layout_alignStart="@+id/feedback"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp" />
 
     <RadioGroup
         android:id="@+id/RGroup"

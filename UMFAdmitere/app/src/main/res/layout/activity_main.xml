@@ -11,27 +11,30 @@
         android:id="@+id/buttonBiologie"
         android:layout_width="236dp"
         android:layout_height="73dp"
+        android:layout_above="@+id/buttonChimie"
+        android:layout_alignLeft="@+id/buttonChimie"
+        android:layout_alignStart="@+id/buttonChimie"
+        android:layout_marginBottom="32dp"
+        android:elevation="0dp"
         android:onClick="buttonBiologie"
         android:text="BIOLOGIE"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:visibility="invisible"
         tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/buttonChimie"
-        android:layout_alignStart="@+id/buttonChimie"
-        android:layout_marginTop="81dp" />
+        tools:layout_editor_absoluteY="100dp" />
 
     <Button
         android:id="@+id/buttonChimie"
         android:layout_width="236dp"
         android:layout_height="73dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:onClick="buttonChimie"
         android:text="CHIMIE"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:visibility="invisible"
         tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="191dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        tools:layout_editor_absoluteY="191dp" />
 
     <CheckBox
         android:id="@+id/currentYear"
@@ -56,5 +59,31 @@
         android:layout_alignTop="@+id/currentYear"
         android:layout_marginTop="44dp"
         android:text="Ani Anteriori" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lastYears"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/lastYears"
+        android:layout_toRightOf="@+id/lastYears"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="0dp"
+        android:minHeight="0dp"
+        android:theme="?attr/actionBarTheme"
+        android:visibility="visible" />
 
 </RelativeLayout>

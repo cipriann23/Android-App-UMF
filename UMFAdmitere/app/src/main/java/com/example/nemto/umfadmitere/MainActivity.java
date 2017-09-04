@@ -8,27 +8,36 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppThemeDark);
+
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.toolbar).bringToFront();
+        setTheme(R.style.AppThemeDark);
+
+        Switch nightmode_switch = (Switch) findViewById(R.id.switch1);
+
+
+
+
+        findViewById(R.id.menubar).bringToFront();
         final FloatingActionButton menu = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(findViewById(R.id.toolbar).getVisibility() == View.VISIBLE) {
-                    findViewById(R.id.toolbar).setVisibility(View.INVISIBLE);
+                if(findViewById(R.id.menubar).getVisibility() == View.VISIBLE) {
+                    findViewById(R.id.menubar).setVisibility(View.INVISIBLE);
                     findViewById(R.id.buttonBiologie).setVisibility(View.VISIBLE);
                     findViewById(R.id.buttonChimie).setVisibility(View.VISIBLE);
                 }
                 else {
-                    findViewById(R.id.toolbar).setVisibility(View.VISIBLE);
+                    findViewById(R.id.menubar).setVisibility(View.VISIBLE);
                     findViewById(R.id.buttonBiologie).setVisibility(View.INVISIBLE);
                     findViewById(R.id.buttonChimie).setVisibility(View.INVISIBLE);
                 }

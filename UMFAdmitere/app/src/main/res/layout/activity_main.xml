@@ -19,7 +19,7 @@
         android:onClick="buttonBiologie"
         android:text="BIOLOGIE"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:visibility="invisible"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="74dp"
         tools:layout_editor_absoluteY="100dp" />
 
@@ -32,7 +32,7 @@
         android:onClick="buttonChimie"
         android:text="CHIMIE"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:visibility="invisible"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="75dp"
         tools:layout_editor_absoluteY="191dp" />
 
@@ -72,18 +72,9 @@
         app:fabSize="mini"
         app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="?attr/colorPrimary"
-        android:elevation="0dp"
-        android:minHeight="0dp"
-        android:theme="?attr/actionBarTheme"
-        android:visibility="visible" />
+    <include
+        android:id="@+id/menubar"
+        layout="@layout/toolbar_menu"
+        android:visibility="invisible"></include>
 
 </RelativeLayout>

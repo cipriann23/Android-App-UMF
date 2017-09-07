@@ -1,48 +1,69 @@
 package com.example.nemto.umfadmitere;
 
 
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
-
         setTheme(R.style.AppThemeDark);
-
-        Switch nightmode_switch = (Switch) findViewById(R.id.switch1);
-
-
-
+        setContentView(R.layout.activity_main);
 
         findViewById(R.id.menubar).bringToFront();
         final FloatingActionButton menu = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(findViewById(R.id.menubar).getVisibility() == View.VISIBLE) {
-                    findViewById(R.id.menubar).setVisibility(View.INVISIBLE);
-                    findViewById(R.id.buttonBiologie).setVisibility(View.VISIBLE);
-                    findViewById(R.id.buttonChimie).setVisibility(View.VISIBLE);
+                    View menubar;
+                    menubar = findViewById(R.id.menubar);
+                    createBottomUpAnimation(menubar, null, menubar.getHeight()).start();
+                    menubar.bringToFront();
+
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Do something after 5s = 5000ms
+                            findViewById(R.id.buttonBiologie).setVisibility(View.VISIBLE);
+                            findViewById(R.id.buttonChimie).setVisibility(View.VISIBLE);
+                            findViewById(R.id.menubar).setVisibility(View.INVISIBLE);
+                        }
+                    }, 300);
+
                 }
                 else {
                     findViewById(R.id.menubar).setVisibility(View.VISIBLE);
-                    findViewById(R.id.buttonBiologie).setVisibility(View.INVISIBLE);
-                    findViewById(R.id.buttonChimie).setVisibility(View.INVISIBLE);
+                    View menubar;
+                    menubar = findViewById(R.id.menubar);
+                    createTopDownAnimation(menubar, null, menubar.getHeight()).start();
+
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Do something after 5s = 5000ms
+                            findViewById(R.id.buttonBiologie).setVisibility(View.INVISIBLE);
+                            findViewById(R.id.buttonChimie).setVisibility(View.INVISIBLE);
+                        }
+                    }, 100);
+
                 }
             }
         });
+
+
     }
 
 
@@ -97,5 +118,28 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    private static ObjectAnimator createBottomUpAnimation(View view,
+                                                          AnimatorListenerAdapter listener, float distance) {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", -distance);
+//        animator.setDuration(???)
+        animator.removeAllListeners();
+        if (listener != null) {
+            animator.addListener(listener);
+        }
+        return animator;
+    }
+
+    public static ObjectAnimator createTopDownAnimation(View view, AnimatorListenerAdapter listener,
+                                                        float distance) {
+        view.setTranslationY(-distance);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", 0);
+        animator.removeAllListeners();
+        if (listener != null) {
+            animator.addListener(listener);
+        }
+        return animator;
+    }
+
 }
 

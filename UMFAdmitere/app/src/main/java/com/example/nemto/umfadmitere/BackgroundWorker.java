@@ -35,7 +35,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String[]> {
     @Override
     protected String[] doInBackground(String... params) {
         //String type = params[0];
-        String random_url = "http://192.168.1.7:1122/random_question_generator.php";
+        String random_url = "http://192.168.1.8:1122/random_question_generator.php";
 
         try {
 

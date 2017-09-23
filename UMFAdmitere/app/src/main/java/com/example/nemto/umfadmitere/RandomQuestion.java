@@ -21,22 +21,28 @@ public class RandomQuestion extends Activity {
 
 
     Integer answer;
-    String category,year;
+    String category, year, theme_set;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //setTheme(R.style.AppThemeDark);
+        // Get the Intent that started this activity and extract the string
+
+        Intent intent = getIntent();
+        theme_set = intent.getStringExtra("theme");
+        if (theme_set.equals("dark")) {
+            setTheme(R.style.AppThemeDark);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
+
         setContentView(R.layout.activity_random_question);
 
-        // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
         category = intent.getStringExtra("category");
         year = intent.getStringExtra("year");
-        // Capture the layout's TextView and set the string as its text
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(category);
 
         //BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         //String res_data;
@@ -44,6 +50,7 @@ public class RandomQuestion extends Activity {
 
         try {
             String[] output = new BackgroundWorker(this).execute(year, category).get();
+            TextView textView = (TextView) findViewById(R.id.textView);
             textView.setText(output[2]);
             RadioButton radio1 = (RadioButton) findViewById(R.id.radioButton1);
             RadioButton radio2 = (RadioButton) findViewById(R.id.radioButton2);
@@ -82,8 +89,8 @@ public class RandomQuestion extends Activity {
 
         TextView feedback = (TextView) findViewById(R.id.feedback);
 
-        if(answer==checked){
-            feedback.setTextColor(Color.rgb(0,204,0));
+        if (answer == checked) {
+            feedback.setTextColor(Color.rgb(0, 204, 0));
             feedback.setText("Răspuns corect!");
 
             findViewById(R.id.radioButton1).setEnabled(false);
@@ -95,12 +102,12 @@ public class RandomQuestion extends Activity {
             findViewById(R.id.buttonUrmatoarea).setVisibility(View.VISIBLE);
 
         }
-        if(answer!=checked) {
-            feedback.setTextColor(Color.rgb(200,0,0));
+        if (answer != checked) {
+            feedback.setTextColor(Color.rgb(200, 0, 0));
             feedback.setText("Răspuns gresit! Mai încearcă");
         }
-        if(checked==0) {
-            feedback.setTextColor(Color.rgb(200,0,0));
+        if (checked == 0) {
+            feedback.setTextColor(Color.rgb(200, 0, 0));
             feedback.setText("Selectați un răspuns!");
         }
     }
@@ -111,8 +118,8 @@ public class RandomQuestion extends Activity {
     public void buttonUrmatoarea(View view) {
 
         Intent intent = new Intent(this, RandomQuestion.class);
-        intent.putExtra("category",category);
-        intent.putExtra("year",year);
+        intent.putExtra("category", category);
+        intent.putExtra("year", year);
         startActivity(intent);
         finish();
     }

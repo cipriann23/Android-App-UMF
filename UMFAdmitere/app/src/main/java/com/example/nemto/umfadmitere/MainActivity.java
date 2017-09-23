@@ -29,9 +29,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
 
+
+        String theme;
         if (AppCompatDelegate.getDefaultNightMode()
                 == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.AppThemeDark);
+        } else {
+            setTheme(R.style.AppTheme);
         }
 
         super.onCreate(savedInstanceState);
@@ -83,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
 
 
         findViewById(R.id.menubar).bringToFront();
@@ -179,6 +182,16 @@ public class MainActivity extends AppCompatActivity {
         String category = "biologie";
         intent.putExtra("category", category);
         intent.putExtra("year", year);
+
+        String theme_set;
+        if (AppCompatDelegate.getDefaultNightMode()
+                == AppCompatDelegate.MODE_NIGHT_YES) {
+            theme_set = "dark";
+        } else {
+            theme_set = "light";
+        }
+        intent.putExtra("theme", theme_set);
+
         startActivity(intent);
 
     }
@@ -207,6 +220,16 @@ public class MainActivity extends AppCompatActivity {
         String category = "chimie";
         intent.putExtra("category", category);
         intent.putExtra("year", year);
+
+        String theme_set;
+        if (AppCompatDelegate.getDefaultNightMode()
+                == AppCompatDelegate.MODE_NIGHT_YES) {
+            theme_set = "dark";
+        } else {
+            theme_set = "light";
+        }
+        intent.putExtra("theme", theme_set);
+
         startActivity(intent);
 
     }

@@ -28,7 +28,6 @@ public class RandomQuestion extends Activity {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setTheme(R.style.AppThemeDark);
         setContentView(R.layout.activity_random_question);
 
         // Get the Intent that started this activity and extract the string

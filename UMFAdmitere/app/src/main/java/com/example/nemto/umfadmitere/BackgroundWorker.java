@@ -35,7 +35,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String[]> {
     @Override
     protected String[] doInBackground(String... params) {
         //String type = params[0];
-        String random_url = "http://192.168.1.3:1122/random_question_generator.php";
+        String random_url = "http://192.168.1.10:1122/AndroidApp/random_question_generator.php";
 
         try {
 
@@ -66,7 +66,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String[]> {
             String[] broken_text = null;
 
             while ((line = bufferedReader.readLine()) != null) {
-                result = line.split("    ");
+                result = line.split("      ");
             }
 
             bufferedReader.close();

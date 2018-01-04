@@ -6,15 +6,20 @@ package com.example.nemto.umfadmitere;
 
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.io.UnsupportedEncodingException;
+import java.sql.Blob;
 import java.util.concurrent.ExecutionException;
 
 public class RandomQuestion extends Activity {
@@ -51,16 +56,20 @@ public class RandomQuestion extends Activity {
         try {
             String[] output = new BackgroundWorker(this).execute(year, category).get();
             TextView textView = (TextView) findViewById(R.id.textView);
-            textView.setText(output[2]);
+            textView.setText(output[0]);
             RadioButton radio1 = (RadioButton) findViewById(R.id.radioButton1);
             RadioButton radio2 = (RadioButton) findViewById(R.id.radioButton2);
             RadioButton radio3 = (RadioButton) findViewById(R.id.radioButton3);
             RadioButton radio4 = (RadioButton) findViewById(R.id.radioButton4);
-            radio1.setText(output[3]);
-            radio2.setText(output[4]);
-            radio3.setText(output[5]);
-            radio4.setText(output[6]);
-            answer = Integer.parseInt(output[7]);
+            radio1.setText(output[1]);
+            radio2.setText(output[2]);
+            radio3.setText(output[3]);
+            radio4.setText(output[4]);
+            answer = Integer.parseInt(output[5]);
+
+
+            //imgView.setImageBitmap(BitmapFactory.decodeFile(output[6]));
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -120,6 +129,7 @@ public class RandomQuestion extends Activity {
         Intent intent = new Intent(this, RandomQuestion.class);
         intent.putExtra("category", category);
         intent.putExtra("year", year);
+        intent.putExtra("theme", theme_set);
         startActivity(intent);
         finish();
     }

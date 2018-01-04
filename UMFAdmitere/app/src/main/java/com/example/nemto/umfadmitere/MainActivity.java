@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         //setTheme(R.style.AppThemeDark);
         setContentView(R.layout.activity_main);
 
-
+    /*
         try {
             SQLiteDatabase myDB = this.openOrCreateDatabase("DATABASE", MODE_PRIVATE, null);
 
-   /* Create a Table in the Database. */
+   /* Create a Table in the Database. 
             String TableName = "NUMETABEL";
             myDB.execSQL("CREATE TABLE IF NOT EXISTS "
                     + TableName
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     + " (Field1, Field2)"
                     + " VALUES ('Casanga', 21);");
 
-   /*retrieve data from database */
+   /*retrieve data from database
             Cursor c = myDB.rawQuery("SELECT * FROM " + TableName + " WHERE Field2 = ?", new String[]{"21"});
 
             int Column1 = c.getColumnIndex("Field1");
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+    */
 
         findViewById(R.id.menubar).bringToFront();
 

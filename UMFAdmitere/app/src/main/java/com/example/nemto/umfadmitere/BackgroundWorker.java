@@ -91,7 +91,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String[]> {
 
     @Override
     protected void onPostExecute(String[] result) {
-        //alertDialog.setMessage(result[1]);
+        //alertDialog.setMessage(result[3]);
         //alertDialog.show();
     }
 

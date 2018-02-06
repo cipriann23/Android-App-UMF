@@ -6,12 +6,15 @@ package com.example.nemto.umfadmitere;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -66,9 +69,15 @@ public class RandomQuestion extends Activity {
             radio3.setText(output[3]);
             radio4.setText(output[4]);
             answer = Integer.parseInt(output[5]);
+            //Log.d("myTag", output[6]);
+            //Bitmap image;
+            //image = BitmapFactory.decodeStream();
 
-
-            //imgView.setImageBitmap(BitmapFactory.decodeFile(output[6]));
+            //textView.setText(output[6]);
+            ImageView image = (ImageView) findViewById(R.id.imageView2);
+            byte[] decodedString = Base64.decode(output[6], Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0,decodedString.length);
+            image.setImageBitmap(decodedByte);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

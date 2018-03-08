@@ -7,67 +7,40 @@
     tools:context="com.example.nemto.umfadmitere.MainActivity">
 
 
-    <Button
-        android:id="@+id/buttonBiologie"
-        android:layout_width="236dp"
-        android:layout_height="73dp"
-        android:layout_above="@+id/buttonChimie"
-        android:layout_alignLeft="@+id/buttonChimie"
-        android:layout_alignStart="@+id/buttonChimie"
-        android:layout_marginBottom="32dp"
-        android:elevation="0dp"
-        android:onClick="buttonBiologie"
-        android:text="BIOLOGIE"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="100dp" />
-
-    <Button
-        android:id="@+id/buttonChimie"
-        android:layout_width="236dp"
-        android:layout_height="73dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="buttonChimie"
-        android:text="CHIMIE"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="191dp" />
-
     <CheckBox
         android:id="@+id/currentYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/buttonChimie"
-        android:layout_alignLeft="@+id/buttonChimie"
+        android:layout_alignLeft="@+id/subcategory_list"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/buttonChimie"
-        android:layout_alignStart="@+id/buttonChimie"
-        android:layout_marginBottom="91dp"
+        android:layout_alignStart="@+id/subcategory_list"
+        android:layout_marginBottom="79dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginStart="65dp"
+        android:gravity="center"
         android:text="Anul Curent" />
 
     <CheckBox
         android:id="@+id/lastYears"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/currentYear"
         android:layout_alignLeft="@+id/currentYear"
-        android:layout_alignRight="@+id/currentYear"
         android:layout_alignStart="@+id/currentYear"
-        android:layout_alignTop="@+id/currentYear"
-        android:layout_marginTop="44dp"
+        android:layout_below="@+id/subcategory_list"
+        android:layout_marginTop="37dp"
+        android:gravity="center"
         android:text="Ani Anteriori" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/lastYears"
-        android:layout_marginTop="17dp"
-        android:layout_toEndOf="@+id/lastYears"
-        android:layout_toRightOf="@+id/lastYears"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="12dp"
         android:clickable="true"
         app:fabSize="mini"
         app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
@@ -75,16 +48,21 @@
     <include
         android:id="@+id/menubar"
         layout="@layout/toolbar_menu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:visibility="visible"></include>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/floatingActionButton"
-        android:layout_alignRight="@+id/floatingActionButton"
-        android:layout_below="@+id/buttonChimie"
-        android:layout_marginTop="48dp"
-        android:text="TextView" />
+    <ListView
+        android:id="@+id/subcategory_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/currentYear"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible" />
 
 </RelativeLayout>

@@ -52,33 +52,52 @@ public class RandomQuestion extends Activity {
         category = intent.getStringExtra("category");
         year = intent.getStringExtra("year");
 
-        //BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        //String res_data;
-        //backgroundWorker.execute(year,category);
-
         try {
             String[] output = new BackgroundWorker(this).execute(year, category).get();
             TextView textView = (TextView) findViewById(R.id.textView);
-            textView.setText(output[0]);
             RadioButton radio1 = (RadioButton) findViewById(R.id.radioButton1);
             RadioButton radio2 = (RadioButton) findViewById(R.id.radioButton2);
             RadioButton radio3 = (RadioButton) findViewById(R.id.radioButton3);
             RadioButton radio4 = (RadioButton) findViewById(R.id.radioButton4);
-            radio1.setText(output[1]);
-            radio2.setText(output[2]);
-            radio3.setText(output[3]);
-            radio4.setText(output[4]);
-            answer = Integer.parseInt(output[5]);
-            //Log.d("myTag", output[6]);
-            //Bitmap image;
-            //image = BitmapFactory.decodeStream();
+            RadioButton radio5 = (RadioButton) findViewById(R.id.radioButton5);
 
-            //textView.setText(output[6]);
-            ImageView image = (ImageView) findViewById(R.id.imageView2);
-            byte[] decodedString = Base64.decode(output[6], Base64.DEFAULT);
-            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0,decodedString.length);
-            image.setImageBitmap(decodedByte);
+            byte[] data0 = Base64.decode(output[0], Base64.DEFAULT);
+            byte[] data1 = Base64.decode(output[1], Base64.DEFAULT);
+            byte[] data2 = Base64.decode(output[2], Base64.DEFAULT);
+            byte[] data3 = Base64.decode(output[3], Base64.DEFAULT);
+            byte[] data4 = Base64.decode(output[4], Base64.DEFAULT);
+            byte[] data5 = Base64.decode(output[5], Base64.DEFAULT);
+            byte[] data6 = Base64.decode(output[6], Base64.DEFAULT);
+            try {
+                String text0 = new String(data0, "UTF-8");
+                textView.setText(text0);
 
+                String text1 = new String(data1, "UTF-8");
+                String text2 = new String(data2, "UTF-8");
+                String text3 = new String(data3, "UTF-8");
+                String text4 = new String(data4, "UTF-8");
+                String text5 = new String(data5, "UTF-8");
+                String text6 = new String(data6, "UTF-8");
+
+                radio1.setText(text1);
+                radio2.setText(text2);
+                radio3.setText(text3);
+                radio4.setText(text4);
+                radio5.setText(text5);
+                answer = Integer.parseInt(text6);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
+
+            int max = output.length;
+            if(max > 7){
+
+                ImageView image = (ImageView) findViewById(R.id.imageView2);
+                byte[] decodedString = Base64.decode(output[7], Base64.DEFAULT);
+                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                image.setImageBitmap(decodedByte);
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -99,11 +118,14 @@ public class RandomQuestion extends Activity {
         boolean isChecked2 = ((RadioButton) findViewById(R.id.radioButton2)).isChecked();
         boolean isChecked3 = ((RadioButton) findViewById(R.id.radioButton3)).isChecked();
         boolean isChecked4 = ((RadioButton) findViewById(R.id.radioButton4)).isChecked();
+        boolean isChecked5 = ((RadioButton) findViewById(R.id.radioButton5)).isChecked();
+
         int checked = 0;
         if (isChecked1) checked = 1;
         if (isChecked2) checked = 2;
         if (isChecked3) checked = 3;
         if (isChecked4) checked = 4;
+        if (isChecked5) checked = 5;
 
         TextView feedback = (TextView) findViewById(R.id.feedback);
 
@@ -115,7 +137,7 @@ public class RandomQuestion extends Activity {
             findViewById(R.id.radioButton2).setEnabled(false);
             findViewById(R.id.radioButton3).setEnabled(false);
             findViewById(R.id.radioButton4).setEnabled(false);
-
+            findViewById(R.id.radioButton5).setEnabled(false);
             findViewById(R.id.buttonRaspunde).setVisibility(View.INVISIBLE);
             findViewById(R.id.buttonUrmatoarea).setVisibility(View.VISIBLE);
 

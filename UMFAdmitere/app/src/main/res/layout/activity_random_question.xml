@@ -79,6 +79,15 @@
             tools:layout_editor_absoluteX="49dp"
             tools:layout_editor_absoluteY="162dp" />
 
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RGroup"
+            android:layout_toLeftOf="@+id/buttonUrmatoarea"
+            android:layout_toStartOf="@+id/buttonUrmatoarea"
+            android:text="RadioButton" />
+
     </RadioGroup>
 
     <Button

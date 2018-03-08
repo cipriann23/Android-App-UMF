@@ -35,19 +35,20 @@ public class BackgroundWorker extends AsyncTask<String, String, String[]> {
     @Override
     protected String[] doInBackground(String... params) {
         //String type = params[0];
-        String random_url = "http://192.168.1.10:1122/AndroidApp/random_question_generator.php";
+
 
         try {
 
             String year = params[0];
             String category = params[1];
+            String random_url = "http://webserviceandroid.tk?year="+year+"&category="+category;
 
             URL url = new URL(random_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
-
+            /*
             // set params
             OutputStream outputStream = httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
@@ -57,6 +58,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String[]> {
             bufferedWriter.flush();
             bufferedWriter.close();
             outputStream.close();
+            */
 
             // get result
             InputStream inputStream = httpURLConnection.getInputStream();
@@ -72,6 +74,8 @@ public class BackgroundWorker extends AsyncTask<String, String, String[]> {
             bufferedReader.close();
             inputStream.close();
             httpURLConnection.disconnect();
+
+            //result[0]=post_data;
 
             return result;
         } catch (MalformedURLException e) {

@@ -55,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
         final String[] items = new String[]{"BIOLOGIE", "CHIMIE", "FIZICA"};
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 
-        ListView listView = (ListView) findViewById(R.id.categorylist);
+        final ListView listView = (ListView) findViewById(R.id.categorylist);
         listView.setAdapter(itemsAdapter);
 
-        final String[] BIOLOGIE = new String[]{"Metabolism", "Analizatorii", "Celula si tesuturile", "BIOLOGIE4"};
-        final String[] CHIMIE = new String[]{"CHIMIE1", "CHIMIE2", "CHIMIE3", "CHIMIE4"};
-        final String[] FIZICA = new String[]{"FIZICA1", "FIZICA2", "FIZICA3", "FIZICA4"};
+        final String[] BIOLOGIE = new String[]{"Intrebari amestecate", "Metabolism", "Analizatorii", "Celula si tesuturile", "Glandele endocrine", "Hemostazia", "Sistemul excretor", "Sistemul reproducator", "Sistemul circulator", "Sistemul digestiv", "Sistemul nervos", "Sistemul osos si muscular"};
+        final String[] CHIMIE = new String[]{"Intrebari amestecate"};
+        final String[] FIZICA = new String[]{"Intrebari amestecate", "Electricitate", "Fizicaoptica", "Termodinamica"};
 
         final ArrayAdapter<String> itemsAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, BIOLOGIE);
         final ArrayAdapter<String> itemsAdapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, CHIMIE);
@@ -68,19 +68,27 @@ public class MainActivity extends AppCompatActivity {
 
         final FloatingActionButton menu = (FloatingActionButton) findViewById(R.id.floatingActionButton);
 
+
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
 
                         ListView listView2 = (ListView) findViewById(R.id.subcategory_list);
+                        findViewById(R.id.textView3).setVisibility(View.INVISIBLE);
+                        findViewById(R.id.currentYear).setVisibility(View.INVISIBLE);
+                        findViewById(R.id.lastYears).setVisibility(View.INVISIBLE);
                         if (Objects.equals(items[position], "BIOLOGIE")) {
                             listView2.setAdapter(itemsAdapter2);
                             listView2.setOnItemClickListener(
                                     new AdapterView.OnItemClickListener() {
                                         @Override
                                         public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
-                                            getQuestion(BIOLOGIE[position]);
+                                            if(position == 0){
+                                                getQuestion("biologie");
+                                            }else {
+                                                getQuestion(BIOLOGIE[position]);
+                                            }
                                         }
                                     }
                             );
@@ -91,7 +99,11 @@ public class MainActivity extends AppCompatActivity {
                                     new AdapterView.OnItemClickListener() {
                                         @Override
                                         public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
-                                            getQuestion(CHIMIE[position]);
+                                            if(position == 0){
+                                                getQuestion("chimie");
+                                            }else {
+                                                getQuestion(CHIMIE[position]);
+                                            }
                                         }
                                     }
                             );
@@ -102,20 +114,21 @@ public class MainActivity extends AppCompatActivity {
                                     new AdapterView.OnItemClickListener() {
                                         @Override
                                         public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
-                                            getQuestion(FIZICA[position]);
+                                            if(position == 0){
+                                                getQuestion("fizica");
+                                            }else {
+                                                getQuestion(FIZICA[position]);
+                                            }
                                         }
                                     }
                             );
                         }
 
-
                         menu.performClick();
+
                     }
                 }
         );
-
-
-
 
         menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -131,6 +144,9 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             // Do something after 5s = 5000ms
                             findViewById(R.id.subcategory_list).setVisibility(View.VISIBLE);
+                            findViewById(R.id.currentYear).setVisibility(View.VISIBLE);
+                            findViewById(R.id.lastYears).setVisibility(View.VISIBLE);
+                            findViewById(R.id.textView3).setVisibility(View.VISIBLE);
                             findViewById(R.id.menubar).setVisibility(View.INVISIBLE);
                         }
                     }, 300);
@@ -149,14 +165,15 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             // Do something after 5s = 5000ms
                             findViewById(R.id.subcategory_list).setVisibility(View.INVISIBLE);
+                            findViewById(R.id.currentYear).setVisibility(View.INVISIBLE);
+                            findViewById(R.id.lastYears).setVisibility(View.INVISIBLE);
+                            findViewById(R.id.textView3).setVisibility(View.INVISIBLE);
                         }
                     }, 100);
 
                 }
             }
         });
-
-
     }
 
     public void onSwitchClicked(View v) {

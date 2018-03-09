@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         final String[] BIOLOGIE = new String[]{"Intrebari amestecate", "Metabolism", "Analizatorii", "Celula si tesuturile", "Glandele endocrine", "Hemostazia", "Sistemul excretor", "Sistemul reproducator", "Sistemul circulator", "Sistemul digestiv", "Sistemul nervos", "Sistemul osos si muscular"};
         final String[] CHIMIE = new String[]{"Intrebari amestecate"};
-        final String[] FIZICA = new String[]{"Intrebari amestecate", "Electricitate", "Fizicaoptica", "Termodinamica"};
+        final String[] FIZICA = new String[]{"Intrebari amestecate", "Electricitate", "Fizica optica", "Termodinamica"};
 
         final ArrayAdapter<String> itemsAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, BIOLOGIE);
         final ArrayAdapter<String> itemsAdapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, CHIMIE);

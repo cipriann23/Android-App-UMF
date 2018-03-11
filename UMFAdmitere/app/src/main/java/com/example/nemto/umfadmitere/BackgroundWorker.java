@@ -41,6 +41,7 @@ public class BackgroundWorker extends AsyncTask<String, String, String[]> {
 
             String year = params[0];
             String category = params[1];
+            category = category.replaceAll(" ", "%20");
             String random_url = "http://109.97.216.179:1122?year="+year+"&category="+category;
 
             URL url = new URL(random_url);

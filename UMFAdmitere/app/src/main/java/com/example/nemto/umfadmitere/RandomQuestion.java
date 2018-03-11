@@ -68,8 +68,8 @@ public class RandomQuestion extends Activity {
 
             try {
                 String[] output = new BackgroundWorker(this).execute(year, category).get();
-
-                if(output.length > 0){
+                int min = output.length;
+                if(min > 0){
 
                     byte[] data0 = Base64.decode(output[0], Base64.DEFAULT);
                     byte[] data1 = Base64.decode(output[1], Base64.DEFAULT);

@@ -1,95 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/relativeLayout2"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/menutop"
-        android:layout_width="280dp"
-        android:layout_height="146dp"
-        android:orientation="horizontal">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:text="IAȘI"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imageView"
-                android:layout_toLeftOf="@+id/imageView"
-                android:layout_toStartOf="@+id/imageView"
-                android:text="UMF"
-                android:textSize="50dp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:layout_marginStart="1dp"
+        android:text="Întrebări Admitere"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/menutoolbar"
+        app:layout_constraintStart_toStartOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Întrebări Admitere"
-                android:layout_marginTop="110dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="20dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="13dp"
-                android:layout_marginRight="13dp"
-                app:srcCompat="@mipmap/ic_launcher"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="40dp" />
 
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/menubottom"
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/menutoolbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="100dp"
         android:background="@color/colorPrimaryDark"
         android:orientation="horizontal"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/menutop">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Switch
+            android:id="@+id/switch3"
+            android:layout_width="0dp"
+            android:layout_height="27dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:width="200dp"
+            android:onClick="onSwitchClicked"
+            android:text="Mod noapte"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <Switch
-                android:id="@+id/switch3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mod noapte"
-                android:onClick="onSwitchClicked"
-                android:layout_marginTop="26dp"
-                android:width="200dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="36dp"
-                android:layout_marginStart="36dp" />
+        <ListView
+            android:id="@+id/categorylist"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switch3"
+            app:layout_constraintVertical_bias="0.086" />
 
-            <ListView
-                android:id="@+id/categorylist"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginBottom="100dp"
-                android:layout_marginLeft="36dp"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="100dp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="ATENTIE! In modul offline intrebarile sunt limitate din motive de securitate!"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/categorylist" />
 
-        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
 
-    </LinearLayout>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

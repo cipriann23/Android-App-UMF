@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>Una dintre următoarele afirmaţii NU este corectă:</question>
+    <ans1>o suprafaţă care difuzează lumina în toate direcţiile este o suprafaţă mată</ans1>
+    <ans2>reflexia pe o suprafaţă neregulată este o reflexie difuză</ans2>
+    <ans3>dacă suprafaţa de separaţie dintre două medii este netedă, reflexia este regulată</ans3>
+    <ans4>formarea imaginii unui obiect prin reflexie este posibilă doar pentru reflexia difuză</ans4>
+    <ans5>dacă suprafaţa de separaţie dintre două medii este netedă, reflexia este dirijată</ans5>
+    <rightans>4</rightans>
+  </questions>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>O suprafaţă este considerată mată dacă:</question>
+    <ans1>razele de lumină incidente sunt reflectate în toate direcţiile</ans1>
+    <ans2>razele reflectate sunt paralele între ele</ans2>
+    <ans3>se produce fenomenul de reflexie regulată</ans3>
+    <ans4>razele incidente sunt paralele între ele</ans4>
+    <ans5>se produce fenomenul de reflexie dirijată</ans5>
+    <rightans>1</rightans>
+  </questions>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>Una dintre următoarele afirmaţii legate de fenomenul de reflexie şi refracţie NU este corectă:</question>
+    <ans1>unghiul de reflexie este egal cu unghiul de incidenţă</ans1>
+    <ans2>raza incidenţă, normala la suprafaţă în punctul de incidenţă şi raza refractată sunt coplanare</ans2>
+    <ans3>raportul dintre sinusul unghiului de incidenţă şi sinusul unghiului de refracţie este constant</ans3>
+    <ans4>raza incidenţă, normala la suprafaţă în punctul de incidenţă şi raza reflectată sunt coplanare</ans4>
+    <ans5>în cazul refracţiei, unghiul de deviaţie este dat de suma dintre unghiul de incidenţă şi cel de refracţie</ans5>
+    <rightans>5</rightans>
+  </questions>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>Unghiul dintre direcţia razei incidente şi direcţia razei refractate se numeşte:</question>
+    <ans1>unghi de reflexie</ans1>
+    <ans2>unghi de incidenţă</ans2>
+    <ans3>unghi de deviaţie</ans3>
+    <ans4>unghi de refracţie</ans4>
+    <ans5>unghi de difuziune</ans5>
+    <rightans>3</rightans>
+  </questions>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>Una dintre următoarele afirmaţii NU este corectă:</question>
+    <ans1>legile reflexiei sunt valabile şi pentru reflexia difuză</ans1>
+    <ans2>formarea imaginii unui obiect prin reflexie este posibilă doar pentru reflexia dirijată</ans2>
+    <ans3>razele reflectate de o suprafaţă mată sunt paralele între ele</ans3>
+    <ans4>în cazul corpurilor metalice lustruite, reflexia este dominantă </ans4>
+    <ans5>culoarea corpurilor se datorează selectivităţii absorbţiei</ans5>
+    <rightans>3</rightans>
+  </questions>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>Un fascicul divergent de lumină cade pe o oglindă planăFasciculul reflectat este totdeauna:</question>
+    <ans1>divergent</ans1>
+    <ans2>paralel</ans2>
+    <ans3>convergent</ans3>
+    <ans4>paraxial</ans4>
+    <ans5>nicio variantă de răspuns nu este corectă</ans5>
+    <rightans>1</rightans>
+  </questions>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>Un fascicul convergent de lumină cade pe o oglindă plană, vârful fasciculului fiind în  spatele oglinziiFasciculul reflectat este totdeauna:</question>
+    <ans1>divergent</ans1>
+    <ans2>paralel</ans2>
+    <ans3>convergent o</ans3>
+    <ans4>paraxial</ans4>
+    <ans5>nicio variantă de răspuns nu este corectă</ans5>
+    <rightans>3</rightans>
+  </questions>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>Unghiul de deviaţie, δ, al razei reflectate faţă de raza incidenţă pe o oglindă plană este  δ=80° (vezi figura alăturată)Unghiul de incidenţă este</question>
+    <ans1>50°</ans1>
+    <ans2>40°</ans2>
+    <ans3>30°</ans3>
+    <ans4>20°</ans4>
+    <ans5>10°</ans5>
+    <rightans>1</rightans>
+  </questions>
+  <questions>
+    <category>fizica</category>
+    <subcategory>fizica optica</subcategory>
+    <year>2017</year>
+    <question>Una dintre următoarele afirmaţii referitoare la formarea imaginii obiectelor reale printr-o oglindă plană NU este corectă:</question>
+    <ans1>distanţa obiect-oglindă este egală cu distanţa oglindă-imagine</ans1>
+    <ans2>dimensiunea imaginii este egală cu dimensiunea obiectului</ans2>
+    <ans3>imaginea obţinută este reală</ans3>
+    <ans4>imaginea se formează la intersecţia prelungirilor razelor reflectate</ans4>
+    <ans5>imaginea se stabileşte folosind legile reflexiei</ans5>
+    <rightans>3</rightans>
+  </questions>
+</root>
